@@ -1,0 +1,17 @@
+{
+	"compilerOptions": {
+		"moduleResolution": "node",
+		"isolatedModules": true,
+		"esModuleInterop": true,
+		"outDir": "dist",
+		"declaration": true,
+
+		// Target Node.js v12
+		"lib": ["es2019"],
+		"module": "commonjs",
+		"target": "es2019"
+	},
+	"include": [
+		"src/index.ts"
+	]
+}
