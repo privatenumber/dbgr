@@ -26,10 +26,10 @@ import dbgr from 'dbgr'
     // ...
 
     await dbgr((resume) => {
-        console.log('This is the debugger zone');
+        console.log('The debugger has started');
 
-        // Write code here and hitting save
-        // automatically re-runs it in this context
+        // Write code here and hit save to
+        // automatically re-run this function
 
         // Call resume() and save to resume the debugger
 
@@ -40,7 +40,7 @@ import dbgr from 'dbgr'
 
 ## 🙋‍♀️ FAQ
 ### How does it work?
-Upon invoking **dbgr**, it detects the file path of the caller by using [V8 stack trace API](https://v8.dev/docs/stack-trace-api) via [callsites](https://github.com/sindresorhus/callsites). It then watches the file for changes using [`fs.watch`](https://nodejs.org/docs/latest/api/fs.html#fs_fs_watch_filename_options_listener). When a change is detected, it parses the source code using [acorn](https://github.com/acornjs/acorn) to extract the specific function passed into **dbgr**. It then passes it into the `_ => eval(_)` to run in the original context.
+Upon invoking dbgr, it detects the file path of the caller by using [V8 stack trace API](https://v8.dev/docs/stack-trace-api) via [callsites](https://github.com/sindresorhus/callsites). It then watches the file for changes using [`fs.watch`](https://nodejs.org/docs/latest/api/fs.html#fs_fs_watch_filename_options_listener). When a change is detected, it parses the source code using [acorn](https://github.com/acornjs/acorn) to extract the specific function passed into dbgr. It then passes it into the `_ => eval(_)` to run in the original context.
 
 ### Does it work in TypeScript files?
 Yes. While the AST parser acorn is designed for ES parsing, TS files can be loosely parsed via [acorn-loose](https://github.com/acornjs/acorn/tree/master/acorn-loose), and the content inside the dbgr hook has the types stripped via [esbuild](https://esbuild.github.io/) for it to be "safely" `eval()`'d by the JavaScript runtime.
