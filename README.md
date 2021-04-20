@@ -1,14 +1,14 @@
 # dbgr <a href="https://npm.im/dbgr"><img src="https://badgen.net/npm/v/dbgr"></a><!--<a href="https://npm.im/dbgr"><img src="https://badgen.net/npm/dm/dbgr"></a>--> <a href="https://packagephobia.now.sh/result?p=dbgr"><img src="https://packagephobia.now.sh/badge?p=dbgr"></a>
 
-**dbgr** is a lightweight debugger function that pauses your script, and watches the current file for any changes and only re-runs the specific code that's passed in to it.
+**dbgr** is a lightweight debugger function that pauses your script, watches the current file for any changes and only re-runs the specific code that's passed in to it. It's just like `debugger` but requires no IDE or browser dev-tools integrations.
 
 
 <sub>If you like this project, please star it & [follow me](https://github.com/privatenumber) to see what other cool projects I'm working on! ❤️</sub>
 
 ## 🙋‍♂️ Why?
-You can set breakpoints in Node.js via `debugger` statements, but it could be a hassle to set up and can really slow down your script.
+You can set breakpoints in Node.js with breakpoints or `debugger` statements, but it could be a hassle to set up and can slow down your script.
 
-When you're debugging something heavy with slow-startup (eg. server, headless Chrome, etc), you want to use something simple & light to debug.
+When you're debugging something heavy with slow startup (eg. server, headless Chrome, etc), you want to use something simple & light to debug.
 
 ## 🚀 Install
 ```sh
